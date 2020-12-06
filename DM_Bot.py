@@ -16,21 +16,18 @@ async def on_ready():
 
 async def send(ctx ,* , message : str):
 	for member in ctx.guild.members:
-		try:
-			total = ctx.guild.members
-			await member.send(message)
-			await ctx.send(f"DM sent to {member} :white_check_mark:")
-		except:
-	            await ctx.send(f"Cant send DM to {member} :x:")
+		total = ctx.guild.members
+		await member.send(message)
+		await ctx.send(f"DM sent to {member} :white_check_mark:")
+	await ctx.send('''
+	Process Finished!
+        Made by Ekamjot#9133''')
+
+	            
 			
 			
 
-@client.command()
-async def finish(ctx):
-	await ctx.message.delete()
-	await ctx.send('''
-Process Finished!
-Made by Ekamjot#9133''')
+
 
 client.run("NzM5MDYzODA2MTk3NzYwMDYz.XyVAzg.kuSRV3UTifJ6BKHm57NmwK4XByY")
 

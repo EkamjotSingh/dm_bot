@@ -20,11 +20,8 @@ async def send(ctx ,* , message : str):
 			total = ctx.guild.members
 			await member.send(message)
 			await ctx.send(f"DM sent to {member} :white_check_mark:")
-			
-			if ctx.author.id == 739063806197760063:
-				return
-			except:
-			    await ctx.send(f"Cant send DM to {member} :x:")
+		except:
+	            await ctx.send(f"Cant send DM to {member} :x:")
 			
 			
 

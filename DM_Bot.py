@@ -1,6 +1,6 @@
 import discord
 from discord.ext import commands
-from discord.ext.commands import Bot , has_permissions
+from discord.ext.commands import Bot
 
 client = commands.Bot(command_prefix="d!")
 
@@ -13,17 +13,20 @@ async def on_ready():
 	print("I am ready!")
 
 @client.command()
-@has_permissions(administrator=True)
+
 async def send(ctx ,* , message : str):
 	for member in ctx.guild.members:
 		try:
-
 			total = ctx.guild.members
 			await member.send(message)
 			await ctx.send(f"DM sent to {member} :white_check_mark:")
-
-		except:
-			await ctx.send(f"Cant send DM to {member} :x:")
+			
+			if ctx.author.id == 739063806197760063:
+				return
+			except:
+			    await ctx.send(f"Cant send DM to {member} :x:")
+			
+			
 
 @client.command()
 async def finish(ctx):
